@@ -1,0 +1,747 @@
+<!DOCKTYPE HTML>
+<html lang="ko">
+	<head>
+		<!--파비콘 설정-->
+		<link rel="apple-touch-icon" sizes="57x57" href="img/파비콘/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="img/파비콘/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="img/파비콘/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/파비콘/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="img/파비콘/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/파비콘/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="img/파비콘/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/파비콘/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/파비콘/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="img/파비콘/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/파비콘/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="img/파비콘/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/파비콘/favicon-16x16.png">
+		<link rel="manifest" href="img/파비콘/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="img/파비콘/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--파비콘 설정 끝-->
+		
+		<meta charset="utf-8">
+		<title>LHJ</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--jquery Mobile 스타일시트 포함-->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<!--jquery 라이브러리-->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<!--jquery 모바일 라이브러리-->
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<!--구글URL을 통한 폰트 설정, W3C와 함께 사용 불가-->
+		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<style type="text/css">
+		* {
+			font-family: 'Noto Sans KR', sans-serif;
+			box-sizing : border-box;
+		}
+		<!--
+		table{
+                border-top: 1px solid #444444;
+                border-collapse: collapse;
+        }
+		
+        tr{
+                border-bottom: 1px solid #444444;
+                padding: 10px;
+        }
+		
+        td{
+                border-bottom: 1px solid #efefef;
+                padding: 10px;
+        }
+		
+        table .even{
+                background: #efefef;
+        }
+		
+        .text{
+                text-align:center;
+                padding-top:20px;
+                color:#000000
+        }
+		
+        .text:hover{
+                text-decoration: underline;
+        }
+		
+        a:link {color : #57A0EE; text-decoration:none;}
+		
+        a:hover { text-decoration : underline;}
+		-->
+		.number{
+			width:200px;
+		}
+		.img-container{
+			text-align: center;
+		}
+		.ui-icon-bars{
+			width:50px;
+			 background-size: 100px;
+		}
+		.ui-page .ui-header{
+			background: #ffffff;
+		}
+		.menu-bars{
+			position: absolute;
+			left : 10px;
+		}
+		
+		.ui-navbar p { 
+		 text-shadow: none;
+		font-size: 10px; 
+		font-family: 'Balsamiq Sans', cursive;
+		}
+		
+		#title .img-container{
+			background-color : #c2e6e4;
+			border-top: 5px double #a5a8ab;
+			border-bottom: 5px double #a5a8ab;
+		}
+		
+		#Panel-header {
+			color:#84ccc9;
+		}
+		
+		#Panel-List>li{
+			color:#84ccc9;
+		}
+		
+		.All_Page{
+			background-color:#ffffff;
+		}
+		
+		.Nav_Right{
+			text-align:center;
+			color:#84ccc9;
+		}
+		
+		.gauge{
+			display: inline-block;
+			width:25%;
+			text-shadow:none;
+			color:white;
+			float:left;
+			text-align: center;
+		}
+		.Standard{
+			display: inline-block;
+			width:25%;
+			float:left;
+		}
+		div.relative {
+			position: relative;
+			width: 100%;
+		}
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		} 
+		.ui-select{
+			width:200px;
+			height:70px;
+		}
+		.relative_scroll_down{
+			position: fixed;
+			right:20px;
+			bottom:20px;
+		}
+		.ui-icon-arrow-d:after{
+			background-color: #c2e6e4;
+		}
+		
+		div #ani{
+			animation: mymove 15s infinite;
+		}
+		.Ani{
+			position: relative
+			text-align : center;
+		}
+		@keyframes mymove {
+			0%  {width: 200px;}
+			
+			100%{width: 0px;}
+		}
+		#inner {
+			display: table;
+			margin: 0 auto;
+		}
+
+		#outer {
+			width:100%
+		}
+		</style>
+		
+	</head>
+	<body>
+	<script type="text/javascript">
+		var panel = '<div data-role="panel" id="Open-panel" data-position-fixed="true" data-position="left" data-display="overlay" data-theme="b"><div id="Panel-header"><h1>Panel</h1></div><ul id="Panel-List" data-role="listview" data-inset="true"><li><a href="#pageone">START OF THIS SITE</a></li><li data-role="list-divider">외적 관리</li><li><a href="#pagetwo">1. 체중감량</a></li><li><a href="#pagethree">2. 멋부리기</a></li></ul> <ul data-role="listview" data-inset="true"><li><a href="#pagesix">마치며..</a></li></ul></div>';
+
+		$(document).one('pagebeforecreate', function () {
+			$.mobile.pageContainer.prepend(panel);
+			$("#Open-panel").panel().enhanceWithin();
+		});
+		
+		
+			
+		
+
+	</script>
+	
+	<div class="All_Page" data-role="page" id="pageone">
+		
+		<div data-role="header">
+			<div class="menu-bars">
+				<a href="#Open-panel"><img src="img/bars.png" alt="Bars" style="width:30px; margin:10px;"></a>
+			</div>
+			<div class="img-container">
+				<a href="http://jiks.duckdns.org/"><img src="img/Logo_Modified_2.png" alt="Logo" style="width:200px"></a>
+			</div>
+		</div>
+		<div data-role="main" class="ui-content">
+			<script>
+				$(document).ready(function(){
+					$("#moveBtn").on("click",function(event){
+						  // 이동 버튼을 클릭시 pre 태그로 스크롤의 위치가 이동되도록 한다.
+					 
+						  // 1. pre태그의 위치를 가지고 있는 객체를 얻어온다. => offset 객체
+						  var offset = $("#preId").offset();
+					 
+						  // offset은 절대 위치를 가져온다. offset.top을 통해 상단의 좌표를 가져온다.
+						  // position은 부모를 기준으로한 상대위치를 가져온다.
+						  $("html body").animate({scrollTop:offset.top},500);
+				 
+					});
+				});// end of ready()
+			</script>
+			<div class="relative_scroll_down">
+				<button  id="moveBtn" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-d ui-btn-icon-notext"></a>
+			</div>
+			
+			<div id="Title">
+				<div class="img-container "> <!-- Block parent element -->
+					<h1 id =""style="font-family: 'Balsamiq Sans', cursive;">START OF THIS SITE </h1>
+					<h1>방문해주셔서 감사합니다.</h1>
+					<img src="img/Smile.png" title="귀엽죠?">
+					<p><small>『저와 닮은 이모지, 가와시마 류타 교수님이 웃으면서 환영해주시는군요.』</small></p>
+					
+				</div>
+			</div>
+			<br>
+				<div class="img-container">
+					<script type="text/javascript">
+						function ChangeImg(){
+							Change.src = "img/토이스토리.png";
+							var FunUn = document.getElementById("ThingUn").innerHTML = "- 토이스토리 - (1995 ~ 2019)";
+							setTimeout(ChangeImg2,1000)
+						}
+						function ChangeImg2(){
+						
+							Change.src = "img/톨스토이.jpg";
+							var FunUn = document.getElementById("ThingUn").innerHTML = "현재의 삶에 온힘을 기울여라 - 톨스토리 - (1828 ~ 1910)<br><sub>다시 돌아왔다네.</sub>";
+						}
+					</script>
+					<img id="Change" src="img/톨스토이.jpg" alt="Logo" style="width:200px" onclick="ChangeImg()">
+					<p id="ThingUn">현재의 삶에 온힘을 기울여라 - 톨스토이 - (1828 ~ 1910)<br><sub onclick="ChangeImg()">나를 클릭해보겠나?</sub></p>
+					
+				</div>
+			
+			<br>
+			<p>사람은 한평생을 살면서 죽기 직전까지 목적성과 방향성을 가지고 다양한 활동을 합니다.</p>
+			
+			<p>여기에는 식사, 취침, 운동, 공부, 연애, 쇼핑, 영화 감상, 여행, 독서 등이 있으며 큰 주제를 구분해보았을 때 생존과 자기개발, 여가활동 등으로 구분할 수 있으며 이는 곧 자기관리로 귀결됩니다.</p>
+			
+			<p>더욱이 현대사회의 급변하는 사회구조에 적응하고 급속히 발전하는 기술발전을 이해하고 따라가기 위해서 자기관리는 필수불가결하게 되었으며 저를 비롯한 많은 학생들이 예전보다 더욱 그 필요성을 느끼고 매사에 최선의 결과를 내기 위해 자기관리에 관심을 가지고 있을 것입니다.</p>
+			
+			<p>하지만 아직 어떻게 자기관리를 해야할지 잘 모르는 학생들도 있다는 생각이 들었습니다.</p>
+			
+			<p>그래서 이번 최종 과제물을 통해 자기관리에 대해 소개해보고자 합니다.</p>
+		
+		</div>
+		<div data-role="footer" id="preId">
+			<div data-role ="navbar">
+				<ul>
+					<li id="Last_bottom"><a href="#" class="ui-disabled"><img src="img/left-arrow-icon.png" alt="Bars" style="width:30px; margin:10px;"></a></li>
+					<li>
+						<a href="#Open-panel"><img src="img/bars.png" alt="기존 아이콘은 너무 작아요" style="width:30px; margin:10px;"></a>
+					</li>
+					<li><a href="#pagetwo" data-transition="slide"><img src="img/right-arrow-icon.png" alt="Bars" style="width:30px; margin:10px;"></a></li>
+				</ul>
+				<ul style="background-color:gray; margin:0px; padding:0px">
+					<li class="Nav_Right">
+						<p style="font-family: 'Balsamiq Sans', cursive;">Thank You For Your Visit!</p>
+						<p>Copyright © 2020. LHJ. All Rights Reserved.</p>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+	<!--두 번째 페이지-->
+	<div data-role="page" id="pagetwo">
+	
+		<div data-role="header">
+			<div class="menu-bars">
+				<a href="#Open-panel"><img src="img/bars.png" alt="Bars" style="width:30px; margin:10px;"></a>
+			</div>
+			<div class="img-container">
+				<a href="http://jiks.duckdns.org/"><img src="img/Logo_Modified_2.png" alt="Logo" style="width:200px"></a>
+			</div>
+		</div>
+		<div data-role="main" class="ui-content">
+			<div id="Title">
+				<div class="img-container "> <!-- Block parent element -->
+					<h1>자기관리의 시작은</h1>
+					<h1>체중 감량부터 시작합시다!</h1>
+					<img src="img/Watching.png" alt="조심합시다" style="width:300px"><p><small>『여러분.. 지금까지 맛있게 드셨나요?』<br>『이제 운동할 때입니다!』</small></p>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function(){
+					$("#moveBtn2").on("click",function(event){
+						  // 이동 버튼을 클릭시 pre 태그로 스크롤의 위치가 이동되도록 한다.
+					 
+						  // 1. pre태그의 위치를 가지고 있는 객체를 얻어온다. => offset 객체
+						  var offset = $("#preId2").offset();
+					 
+						  // offset은 절대 위치를 가져온다. offset.top을 통해 상단의 좌표를 가져온다.
+						  // position은 부모를 기준으로한 상대위치를 가져온다.
+						  $("html body").animate({scrollTop:offset.top},500);
+				 
+					});
+				});// end of ready()
+			</script>
+			<div class="relative_scroll_down">
+				<button  id="moveBtn2" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-d ui-btn-icon-notext"></a>
+			</div>
+			<br>
+				<div class="img-container ">
+					<img src="img/운동2.jpg" style="width:300px">
+				</div>
+				<p>요즘 코로나때문에 나가지도 못하고 강의 듣고 과제하느라 집에 있는 시간이 많아졌죠? 체중이 늘어나신 분이 분명 계실 겁니다.(저는 늘었습니다..)
+				<br><br>살이 쪘으니 뺴긴 빼야하는데 지금 얼마나 살이 찐 것인지, 그러면 여기서 얼마나 더 빼야할지 모르는 분들을 위해서 간단한 측정도구를 만들어 보았습니다!</p>
+				<br><br>Body Mass Index의 줄인 말인 BMI지수는 현재 자신의 몸 상태가 어느정도인지를 간단하게 측정가능한 계산법입니다.<br>
+				<br>밑의 빈 칸을 채워 넣으면 그 결과를 알려드리겠습니다!</p>
+				
+					<div data-role="fieldcontain">
+						<legend>이곳에 입력해보세요.</legend>
+						<fieldset>
+								<p>신장 : </p>
+								<input class="number" data-wrapper-class="number" id="Tall" type="number" name="신장" placeholder="키를 입력해주세요."/>
+								<br>
+								<p>체중 : </p>
+								<input class="number" data-wrapper-class="number"  id="Weight" type="number" name="체중" placeholder="몸무게를 입력해주세요."/>
+								<br>
+								<button type="button" onclick="Bmi_Calc()">계산</button>
+								<script>
+									function Bmi_Calc(){
+										
+										var i = parseFloat(document.getElementById('Tall').value,10);
+										var j = parseFloat(document.getElementById('Weight').value,10);
+										if(i>100){
+											i = i/100;
+										}
+										i = parseFloat(j / Math.pow(i,2)).toFixed(2);
+										
+										if(i<20){
+											var BMI = new String("저체중");
+											document.getElementById("bmi_text_1").innerHTML="당신의 BMI지수는" + i + " 이며 "+BMI+"입니다.";
+											document.getElementById("Explain").innerHTML="체중을 불리셔야 합니다. 물론 근육으로요!";
+											var Cal = 25 * (i/20);
+											var abs = document.getElementById("absolute");
+											abs.style.left=Cal+"%";
+										}
+										else if(i>=20 && i<25){
+											var BMI = new String("정상");
+											document.getElementById("bmi_text_1").innerHTML="당신의 BMI지수는" + i + " 이며 "+BMI+"입니다.";
+											document.getElementById("Explain").innerHTML="BMI지수는 정상이군요. 지방과 근육의 비율까지 적절하다면 완벽합니다!";
+											var Cal = (((i-20)/5)*25+25);
+											var abs = document.getElementById("absolute");
+											abs.style.left=Cal+"%";
+										}
+										else if(i>=25 && i<30){
+											var BMI = new String("과체중");
+											document.getElementById("bmi_text_1").innerHTML="당신의 BMI지수는" + i + " 이며 "+BMI+"입니다.";
+											document.getElementById("Explain").innerHTML="최근 꽤 많이 드셨나보군요! 하지만 정상체중으로 돌아오기까지 그리 오래 걸리지 않을 겁니다!";
+											var Cal = (((i-25)/5)*25+50);
+											var abs = document.getElementById("absolute");
+											abs.style.left=Cal+"%";
+										}
+										else if(i>=30){
+											var BMI = new String("비만");
+											document.getElementById("bmi_text_1").innerHTML="당신의 BMI지수는" + i + " 이며 "+BMI+"입니다.";
+											document.getElementById("Explain").innerHTML="적절한 식단 관리와 운동이 필요해보입니다. PT를 받아보시는걸 추천드립니다!";
+											var Cal = (((i-30)/5)*25+75);
+											var abs = document.getElementById("absolute");
+											abs.style.left=Cal+"%";
+										}
+									}
+								</script>
+						</fieldset>
+					</div>
+					<br>
+					<span id="bmi_text_1"></span>
+					<br><br>
+					<p id="Explain"></p>
+					<div class="relative">
+						<div>
+							<span class="gauge" style="background-color:#2196f3;">
+								저체중
+							</span>
+							<span class="gauge" style="background-color:#8BC34A;">
+								정상
+							</span>
+							<span class="gauge" style="background-color:#FFC107;">
+								과체중
+							</span>
+							<span class="gauge" style="background-color:#f44336;">
+								비만
+							</span>
+						</div>
+						<br>
+						<div>
+							<span class="Standard">
+								0
+							</span>
+							<span class="Standard">
+								20
+							</span>
+							<span class="Standard">
+								25
+							</span>
+							<span class="Standard">
+								30이상
+							</span>
+						</div>
+						<div id="absolute" style="position: absolute; left:97%; left:0px; top:0px;" >
+							<img id="arrow" src="img/arrow_down.png"/>
+						</div>
+					</div>
+					<br>
+					<table style="width:100%" id="BMI_Table">
+						<tbody>
+							<tr>
+								<th rowspan="4" scope="row">판정기준</th>
+								<td>저체중</td>
+								<td>20 미만</td>
+							</tr>
+							<tr>
+								<td>정상</td>
+								<td>25 미만</td>
+							</tr>
+							<tr>
+								<td>과체중</td>
+								<td>30미만</td>
+							</tr>
+							<tr>
+								<td >비만</td>
+								<td>30이상</td>
+							</tr>
+							<tr>
+								<th scope="row">장단점</th>
+								<td colspan="2">표준체중보다는 체지방을 비교적 정확하게 반영할 수 있으면서도 매우 간단히 계산하여 판정할 수 있습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+					<div>
+						<p>
+						여러분.<br><br>
+						자신이 어느 쪽에 속하는지 확인해보셨나요?
+						<br><br>
+						BMI만 측정해도 모두 다 알 수 있으면 좋겠지만
+						<br><br>
+						BMI는 체중에서 지방과 근육의 비율까지는 알 수 없기 때문에
+						<br><br>
+						상대적으로 지방은 적고 근육이 많아도 체중이 많이 나가면 과체중이고
+						<br><br>
+						상대적으로 지방이 많고 근육이 적어도 체중이 적게 나가면 저체중입니다.
+						<br><br>
+						그래서 더 자세한 결과를 알 수 있게끔 도와드리겠습니다!
+						<br><br>
+						추가적인 데이터를 입력해주시면 더욱 자세히 알 수 있는 곳으로 연결해드리겠습니다!
+						</p>
+						<div data-role="fieldcontain">
+							<fieldset>
+							
+								<div data-role="controlgroup" data-type="horizontal">
+									<p>성별 : </p>
+									<input type="radio" id="Man" name="gender" value="남자" checked="checked"/>
+									<label for="Man">남자</label>
+									<input type="radio" id="Woman" name="gender" value="여자"/>
+									<label for="Woman">여자</label>
+								</div>
+							</fieldset>
+							<br>
+							<fieldset>
+								
+								<label for="Age">나이</label>
+								<input type="number" id="Age" name="Age" data-wrapper-class="number">
+								<br>
+								<label for="Activity">평소의 운동 강도</label>
+								<select name="Activity" class="form-control" id="Activity">
+									<option value="1.2" selected>가만히 있음 (사무직)</option>
+									<option value="1.375">가볍게 운동 (1-2일/주)</option>
+									<option value="1.55">적당히 운동 (3-5일/주)</option>
+									<option value="1.725">격렬한 운동 (6-7일/주)</option>
+									<option value="1.9">운동선수만큼 (하루 2번 매일!) </option>
+								</select>
+								<label for="BodyFat" maxlength="2">지방량 %(선택사항)</label>
+								<input type="number" id="BodyFat" data-wrapper-class="number" name="BodyFat" placeholder=>
+								<br>
+								<button type="button" onclick="More_Calc()">확인하기</button>
+								<script>
+									function More_Calc(){
+									var Address= 'https://tdeecalculator.net/result.php?s=metric';
+									var Radio_checked = document.getElementById("Man");
+									if(Radio_checked.checked==true){
+										Address+='&g=male'
+									}
+									else{
+										Address+='&g=female'
+									}
+									var Age =document.getElementById("Age");
+									Address+='&age='+Age.value;
+									var Weight =document.getElementById("Weight");
+									Address+='&kg='+Weight.value;
+									var Tall =document.getElementById("Tall");
+									Address+='&cm='+Tall.value;
+									var Activity =document.getElementById("Activity");
+									Address+='&act='+Activity.value;
+									var BodyFat =document.getElementById("BodyFat");
+									Address+='&bf='+BodyFat.value;
+									window.open(Address, '_blank'); 
+								}
+								</script>
+							</fieldset>
+						</div>
+					</div>
+		</div>
+		<div data-role="footer" id="preId2">
+			<div data-role ="navbar">
+				<ul>
+					<li><a href="#pageone"><img src="img/left-arrow-icon.png" alt="Bars" style="width:30px; margin:10px;"></a></li>
+					<li>
+						<a href="#Open-panel"><img src="img/bars.png" alt="Bars" style="width:30px; margin:10px;"></a>
+					</li>
+					<li><a href="#pagethree" data-transition="slide"><img src="img/right-arrow-icon.png" alt="Bars" style="width:30px; margin:10px;"></a></li>
+				</ul>
+				<ul style="background-color:gray; margin:0px; padding:0px">
+					<li class="Nav_Right">
+						<p style="font-family: 'Balsamiq Sans', cursive;">Thank You For Your Visit!</p>
+						<p>Copyright © 2020. LHJ. All Rights Reserved.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--세 번째 페이지-->
+	<div data-role="page" id="pagethree">
+	
+		<div data-role="header">
+			<div class="menu-bars">
+				<a href="#Open-panel"><img src="img/bars.png" alt="Bars" style="width:30px; margin:10px;"></a>
+			</div>
+			<div class="img-container">
+				<a href="http://jiks.duckdns.org/"><img src="img/Logo_Modified_2.png" alt="Logo" style="width:200px"></a>
+			</div>
+		</div>
+		<div data-role="main" class="ui-content">
+			<div id="Title">
+				<div class="img-container "> <!-- Block parent element -->
+					<h1>살 빼기로 마음먹었다면</h1>
+					<h1>이젠 조금 꾸며볼까요?</h1>
+					<img src="img/빨강.png" alt="조금 차려봤습니다" style="width:200px">
+					<p><small>『조금 멋부려봤습니다.』<br>『인싸같나요?』</small></p>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function(){
+					$("#moveBtn3").on("click",function(event){
+						  // 이동 버튼을 클릭시 pre 태그로 스크롤의 위치가 이동되도록 한다.
+					 
+						  // 1. pre태그의 위치를 가지고 있는 객체를 얻어온다. => offset 객체
+						  var offset = $("#preId3").offset();
+					 
+						  // offset은 절대 위치를 가져온다. offset.top을 통해 상단의 좌표를 가져온다.
+						  // position은 부모를 기준으로한 상대위치를 가져온다.
+						  $("html body").animate({scrollTop:offset.top},500);
+				 
+					});
+				});// end of ready()
+			</script>
+			<div class="relative_scroll_down">
+				<button  id="moveBtn3" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-d ui-btn-icon-notext"></a>
+			</div>
+			<div>
+				<p>체중관리만큼 중요한게 바로 스타일이라고 할 수 있죠.
+				<br><br>
+				각자의 개성이 모두 다르기 때문에 세상에는 사람 수만큼의 스타일이 있다는 말도 있습니다.
+				<br><br>
+				하지만 패션에 관심이 많은 사람들이 대부분에게 무난하면서 어울리는, 보편적인 스타일을 만들어 놓았습니다!
+				<br><br>
+				저희는 그것을 따라하기만 하면 되는거죠(❁´◡`❁) <small>참 편하죠?</small>
+				</p>
+				<br><br>
+				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/bfnkVEgY1Vo?start=14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p><small>↑남자 관리 용품과 방법에 대한 다양한 지식을 알려주는 채널</small></p>
+				<p>지금 유튜브에는 가히 없는게 없다는걸 다들 알고 계실겁니다!
+				<br><br>
+				유튜브가 활성화되기 전에는 패션과 관련된 정보는 블로그와 카페, 커뮤니티를 통해서 이런 정보들을 접할 수 있었지만
+				<br><br>
+				패션에 관심이 많지 않으면 접근성이 떨어지고 정확한 정보를 알기도 힘들죠.
+				<br><br>
+				하지만 유튜브라는 거대한 플랫폼의 등장으로 모든 정보가 한 곳으로 몰리기 시작했습니다. 
+				<br><br>
+				쉽게 검색할 수 있기 때문에 접근성도 올라가고 전문성있는 사람들이 알려주는 
+				<br><br>
+				트랜드에 맞는 최신정보들을 손쉽게 접할 수 있습니다.
+				<br><br>
+				그렇기 때문에 제가 스타일에 대해서 하나 하나 설명하는 것보다는 
+				<br><br>
+				유튜브에 있는 영상들을 통해서 정보를 얻는 것이 좋고
+				<br><br>
+				저는 스타일에 관련된 키워드를 제공해서 쉽게 유튜브를 통해 검색하는 것을 도와드리겠습니다.
+				</p>
+				<div data-role="main" class="ui-content">
+						<h2>보고싶은 목록을 누르거나 추가적으로 궁금한게 있다면 검색해보세요!</h2>
+						<input type="text" id="myInput" placeholder="더 궁금하다면 여기에 검색해보세요!">
+						<script>
+							function SearchYou(){
+								var Address ='https://www.youtube.com/results?search_query=';
+								var getValue = document.getElementById('myInput').value;
+								Address += getValue;
+								window.open(Address, '_blank');
+							}
+						</script>
+						<button onclick="SearchYou()">확인하기</button>
+						<div data-role="collapsible-set" id="Search_div">
+							<div data-role="collapsible" id="div_list">
+								<h3>의류 및 코디</h3>
+								<a target:"_blank" href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%EC%98%B7+%EC%87%BC%ED%95%91%EB%AA%B0" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 옷 쇼핑몰</a>
+								
+								<a target:"_blank" href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%EC%8A%A4%ED%8C%8C+%EB%B8%8C%EB%9E%9C%EB%93%9C" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 스파 브랜드</a>
+								<a target:"_blank" href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%EC%97%AC%EB%A6%84+%EC%BD%94%EB%94%94" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 여름 코디</a>
+							</div>
+							<div data-role="collapsible" id="div_list">
+								<h3>시계</h3>
+								<a href="https://www.youtube.com/results?search_query=%EB%8C%80%ED%95%99%EC%83%9D+%EC%8B%9C%EA%B3%84" target:"_blank"  class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">대학생 시계</a>
+								<a href="https://www.youtube.com/results?search_query=%EA%B0%80%EC%84%B1%EB%B9%84+%EC%8B%9C%EA%B3%84" target:"_blank" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">가성비 시계</a>
+								
+							</div>
+							<div data-role="collapsible" id="div_list">
+								<h3>지갑</h3>
+								<a href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%EC%A7%80%EA%B0%91+%EB%B8%8C%EB%9E%9C%EB%93%9C" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 지갑 브랜드</a>
+								<a href="https://www.youtube.com/results?search_query=%EA%B0%80%EC%84%B1%EB%B9%84+%EC%A7%80%EA%B0%91" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">가성비 지갑</a>
+							</div>
+							<div data-role="collapsible" id="div_list">
+								<h3>헤어 스타일링</h3>
+								<a href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%ED%97%A4%EC%96%B4+%EC%8A%A4%ED%83%80%EC%9D%BC%EB%A7%81" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 헤어 스타일링</a>
+								<a href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%EC%97%AC%EB%A6%84+%EB%A8%B8%EB%A6%AC" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 여름 머리</a>
+							</div>
+							<div data-role="collapsible" id="div_list">
+								<h3>신발</h3>
+								<a href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%EB%8C%80%ED%95%99%EC%83%9D+%EC%8B%A0%EB%B0%9C+%EC%B6%94%EC%B2%9C" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 대학생 신발 추천</a>
+								<a href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%EC%8B%A0%EB%B0%9C+%EB%B8%8C%EB%9E%9C%EB%93%9C" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 신발 브랜드</a>
+								<a href="https://www.youtube.com/results?search_query=%EC%97%AC%EB%A6%84+%EB%82%A8%EC%9E%90+%EC%8B%A0%EB%B0%9C" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">여름 남자 신발</a>
+							</div>
+							<div data-role="collapsible" id="div_list">
+								<h3>재테크</h3>
+								<a href="https://www.youtube.com/results?search_query=%EC%A0%9C%ED%83%9C%ED%81%AC+%EC%A2%85%EB%A5%98" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">제태크 종류</a>
+								<a href="https://www.youtube.com/results?search_query=%EB%8C%80%ED%95%99%EC%83%9D+%EC%9E%AC%ED%85%8C%ED%81%AC" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">대학생 재테크</a>
+								<a href="https://www.youtube.com/results?search_query=%EB%AA%A9%EB%8F%88+%EB%AA%A8%EC%9C%BC%EA%B8%B0" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">목돈 모으기</a>
+							</div>
+							<div data-role="collapsible" id="div_list">
+								<h3>매너</h3>
+								<a href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%EB%A7%A4%EB%84%88" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 매너</a>
+								<a href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%EA%B4%80%EB%A6%AC%EC%9D%98+%EC%A4%91%EC%9A%94%EC%84%B1" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 관리의 중요성</a>
+								<a href="https://www.youtube.com/results?search_query=%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8+%EB%A7%A4%EB%84%88" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">기본적인 매너</a>
+								<a href="https://www.youtube.com/results?search_query=%EC%95%BD%EC%86%8D%EC%8B%9C%EA%B0%84+%EC%A7%80%ED%82%A4%EA%B8%B0" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">약속시간 지키기</a>
+							</div>
+							<div data-role="collapsible" id="div_list">
+								<h3>향수</h3>
+								<a href="https://www.youtube.com/results?search_query=%EB%82%A8%EC%9E%90+%ED%96%A5%EC%88%98+%EC%B6%94%EC%B2%9C" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">남자 향수 추천</a>
+								<a href="https://www.youtube.com/results?search_query=%ED%96%A5%EC%88%98+%EB%BF%8C%EB%A6%AC%EB%8A%94+%EB%B2%95" class="ui-btn ui-corner-all ui-icon-shop ui-btn-icon-right">향수 뿌리는 법</a>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" id="preId3">
+			<div data-role ="navbar">
+				<ul>
+					<li><a href="#pagetwo"><img src="img/left-arrow-icon.png" alt="Bars" style="width:30px; margin:10px;"></a></li>
+					<li>
+						<a href="#Open-panel"><img src="img/bars.png" alt="Bars" style="width:30px; margin:10px;"></a>
+					</li>
+					<li><a href="#pagefour" data-transition="slide"><img src="img/right-arrow-icon.png" alt="Bars" style="width:30px; margin:10px;"></a></li>
+				</ul>
+				<ul style="background-color:gray; margin:0px; padding:0px">
+					<li class="Nav_Right">
+						<p style="font-family: 'Balsamiq Sans', cursive;">Thank You For Your Visit!</p>
+						<p>Copyright © 2020. LHJ. All Rights Reserved.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--네 번째 페이지-->
+	<div data-role="page" id="pagefour">
+	
+		<div data-role="header">
+			<div class="menu-bars">
+				<a href="#Open-panel"><img src="img/bars.png" alt="Bars" style="width:30px; margin:10px;"></a>
+			</div>
+			<div class="img-container">
+				<a href="http://jiks.duckdns.org/"><img src="img/Logo_Modified_2.png" alt="Logo" style="width:200px"></a>
+			</div>
+		</div>
+		<div data-role="main" class="ui-content">
+			<div id="Title">
+				<div class="img-container"> <!-- Block parent element -->
+					<h1>마치며..</h1>
+					<img src="img/함박웃음.png" alt="Logo" style="width:200px">
+					<p>『지금까지 봐주셔서 감사합니다..』<br><br>
+					『더 많은걸 보여드리고 싶었는데 더 이상 시간이 없군요..』
+					<br><br><br>
+					『너무나도 부족한 작품이지만 여기까지 와주신 분들에게 모두 감사 인사를 드립니다..』
+					<br><br><br>
+					『다음 학기에는 꼭 실제로 만나서 인사를 나누면 좋겠습니다..』
+					<br><br><br>
+					『김칠화 교수님, 온라인으로 강의하시는게 처음이라 곤란한 점이 많으셨을텐데 그럼에도』
+					<br><br>
+					『무척이나훌륭한 강의해주셔서 항상 감사했습니다..』
+					<br><br><br><br><br>
+					『다들 나중에 봐요..!』
+					</p>
+					<div id="outer">
+						<div id="inner">
+							<img src="img/Good_bye1.png" id="ani" alt="Good_Bye" style="width:200px">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer">
+			<div data-role ="navbar">
+				<ul>
+					<li><a href="#pagethree"><img src="img/left-arrow-icon.png" alt="Bars" style="width:30px; margin:10px;"></a></li>
+					<li>
+						<a href="#Open-panel"><img src="img/bars.png" alt="Bars" style="width:30px; margin:10px;"></a>
+					</li>
+					<li><a href="#" class="ui-disabled"><img src="img/right-arrow-icon.png" alt="Bars" style="width:30px; margin:10px;"></a></li>
+				</ul>
+				<ul style="background-color:gray; margin:0px; padding:0px">
+					<li class="Nav_Right">
+						<p style="font-family: 'Balsamiq Sans', cursive;">Thank You For Your Visit!</p>
+						<p>Copyright © 2020. LHJ. All Rights Reserved.</p>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+	</body>
+</html>
